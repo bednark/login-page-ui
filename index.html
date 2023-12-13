@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Login</title>
+</head>
+<body>
+  <div class="container">
+    <h1 style="color: white;">Logged sucessful</h1> 
+  </div>
+
+  <script>
+    window.onload = () => {
+      is_logged = document.cookie.split('; ').find(t => t.split('=')[0] == 'login').split('=')[1]
+
+      if(is_logged != 'true') {
+        window.location.href = 'login.html'
+      }
+    }
+  </script>
+</body>
+</html>

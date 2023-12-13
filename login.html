@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Login</title>
+</head>
+<body>
+  <div class="container">
+    <div class="login-form">
+      <h2>Login to access</h2>
+      <input type="text" id="username" placeholder="Login">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="login()">Login</button>
+    </div>
+  </div>
+
+  <script>
+    let login = () => {
+      let username = document.getElementById('username').value
+      let password = document.getElementById('password').value
+
+      if (username == 'admin' && password == 'admin') {
+        document.cookie = 'login=true; expires=2025-01-16T10:16:03.346Z UTC; path=/'
+        window.location.href = '/'
+      }
+      else {
+        alert('Incorrect login or password')
+      }
+    }
+  </script>
+</body>
+</html>
